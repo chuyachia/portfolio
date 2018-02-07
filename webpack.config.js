@@ -1,10 +1,17 @@
-var webpack = require('webpack');
-var path = require('path');
-var connectDB = require('./app/config/connectDB.js');
+const webpack = require('webpack'),
+  path = require('path'),
+  bodyParser = require('body-parser'),
+  connectDB = require('./app/config/connectDB.js'),
+  sendMail = require('./app/config/sendMail.js'),
+  BUILD_DIR = path.resolve(__dirname, 'public/js'),
+  APP_DIR = path.resolve(__dirname, 'app/controllers');
 
-var BUILD_DIR = path.resolve(__dirname, 'public/js');
-var APP_DIR = path.resolve(__dirname, 'app/controllers');
-
+function serverSetUp(app){
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true })); 
+  connectDB(app);
+  sendMail(app);
+}
 
 var config = {
   entry: APP_DIR + '/index.js',
@@ -28,7 +35,7 @@ var config = {
     host: process.env.IP,
     port: process.env.PORT,
     "public":"practice-space-ccyqc.c9users.io",
-    before: connectDB
+    before: serverSetUp
   } 
 };
 

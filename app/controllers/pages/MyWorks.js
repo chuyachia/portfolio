@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import MyWorkChoice from './components/MyWorkChoice.js';
 import WorksDisplay from './components/WorksDisplay.js';

@@ -9,7 +9,6 @@ import About from './pages/About.js';
 import MyWorks from './pages/MyWorks.js';
 import Contact from './pages/Contact.js';
 
-
 const PageShell = Page => {
   return props =>
     <div className="page">

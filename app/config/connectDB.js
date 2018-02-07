@@ -1,5 +1,5 @@
-var mongodb = require('mongodb').MongoClient;
-var config = require('../../../config/config.js');
+const mongodb = require('mongodb').MongoClient,
+    config = require('../../../config/config.js');
 
 module.exports = function(app){
     mongodb.connect('mongodb://'+config.username+':'+config.password+'@'+config.host+':'+config.port+'/'+config.db,
