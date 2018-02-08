@@ -40,7 +40,7 @@ class Navbar extends React.Component {
                     <NavLink exact  class="nav-link" to="/contact" onClick={this.collapse.bind(this)}>Contact</NavLink >
                   </li>
                 </ul>
-                  <i class="fas fa-code fa-lg"></i>
+                  <a href="https://github.com/chuyachia/portfolio" target="_blank"><i class="fas fa-code fa-lg" style={{color:"#919aa1"}}></i></a>
               </div>
             </nav>  
          )

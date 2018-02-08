@@ -48,13 +48,15 @@ class Home extends React.Component {
                 </div>
                 <div class="row lead">
                     <div class="col-sm-4" style={cardStyle}>
-                        I've been learning web programming through <a href="#">freeCodeCamp</a> program and other online resources
+                        I've been learning web programming through <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> program and other online resources
                     </div>
                     <div class="col-sm-4" style={cardStyle}>
-                        I have a great interest in <a href="#">statistics</a>, <a href="#">machine learning</a> and <a href="#">blockchain technology</a>
+                        I have a great interest in <a href="https://github.com/chuyachia/ml" target="_blank">machine learning</a>,
+                        <a href="https://github.com/chuyachia/CS224n" target="_blank"> deep learning</a>,
+                        <a href="https://github.com/chuyachia/glm" target="_blank"> statistics</a>, and <a href="#">blockchain technology</a>
                     </div>
                     <div class="col-sm-4" style={cardStyle}>
-                        I am a self-learner and I am always seeking to improve my <a href="#">programming skill</a>
+                        I am a self-learner and I am always seeking to improve my <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skill</a>
                     </div>
                 </div>
                 </div>

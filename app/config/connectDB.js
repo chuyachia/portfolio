@@ -1,6 +1,12 @@
-const mongodb = require('mongodb').MongoClient,
-    config = require('../../../config/config.js');
-
+const mongodb = require('mongodb').MongoClient;
+var config;
+if (process.env.C9_PROJECT) {
+  config  = require('../../../config/config.js');
+  console.log('Running on C9 IDE');
+} else {
+  config = process.env;
+  console.log('Running on glitch');
+}
 module.exports = function(app){
     mongodb.connect('mongodb://'+config.username+':'+config.password+'@'+config.host+':'+config.port+'/'+config.db,
     function(err,database){

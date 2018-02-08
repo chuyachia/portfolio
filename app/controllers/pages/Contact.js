@@ -15,7 +15,7 @@ class Contact extends React.Component {
                         </div>
                         <div class="col-sm-6">
                             <h3>Or contact me at</h3>
-                            <h5>email@email.com</h5>
+                            <h5>chuyachia@gmail.com</h5>
                         </div>
                     </div>
                 </div>
