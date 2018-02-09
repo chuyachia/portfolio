@@ -23,7 +23,7 @@ class Navbar extends React.Component {
        const navClass = this.state.collapsed ? "collapse" : "";
          return(
            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <Link class="navbar-brand" to="/">Chu-Ya Chia</Link>
+            <Link class="navbar-brand" to="/" style={{transform: "translateY(7px)"}}>Chu-Ya Chia<br/><span style={{fontSize:"50%",textShadow:"0 0 2px #fff",color:"#919aa1"}}>Available for hire</span></Link>
               <button class="navbar-toggler" type="button" onClick={this.toggleCollapse.bind(this)}>
                 <span class="navbar-toggler-icon"></span>
               </button>
