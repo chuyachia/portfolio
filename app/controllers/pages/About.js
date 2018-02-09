@@ -7,7 +7,7 @@ class Home extends React.Component {
     constructor(){
         super();
         this.state = {
-            fulltext:"Hi, there! My name is Chu-Ya. I'm an aspiring web developper with a love for data analysis",
+            fulltext:"Hi, there! My name is Chu-Ya. I'm an aspiring web developer with a love for data analysis",
             displaytext:"",
             i :0
         };
