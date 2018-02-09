@@ -38,7 +38,7 @@ class Home extends React.Component {
             <div style={{ minHeight: "calc(100% - 90px)",display: "flex",alignItems: "center",flexWrap: "wrap"}}>
                 <div class="container">
                 <div style={{boxShadow: "10px 10px 5px grey"}} class="jumbotron">
-                    <h1 class="display-4">Web developement + <br/>Data analysis</h1>
+                    <h1 class="display-4">Web development + <br/>Data analysis</h1>
                     <p class="lead">{this.state.displaytext}</p>
                     <p class="lead">
                          <Link class="btn btn-primary btn-lg" to="/myworks" style={{fontSize:"16px"}}>
