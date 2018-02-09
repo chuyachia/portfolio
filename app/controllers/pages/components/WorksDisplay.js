@@ -44,6 +44,7 @@ class WorksDisplay extends React.Component {
             marginLeft:"15px",
             borderRadius:"50%",
             cursor: "pointer",
+            color:this.props.type=='web'?"#919aa1":"#fff",
             backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a"
         }
         return(

@@ -6,7 +6,7 @@ class Card extends React.Component {
     render(){
         return(
         <div class="col-sm-4">
-            <div class="card" style={{height:"50%",marginBottom:"15px"}}>
+            <div class="card" style={{height:"450px",marginBottom:"15px"}}>
                 <div style={{height:"40%",width:"100%",overflow:"hidden"}}>
                 <img class="card-img-top" src={this.props.img} alt="Card image cap" style={{height:"auto",width:"100%"}}/>
                 </div>
