@@ -48,3 +48,4 @@ class Navbar extends React.Component {
 }
 
 module.exports = Navbar;
+module.exports = Navbar;

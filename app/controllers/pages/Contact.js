@@ -6,7 +6,7 @@ import Message from './components/Message.js';
 class Contact extends React.Component {
     render(){
         return(
-            <div style={{ minHeight: "calc(100% - 90px)",display: "flex",alignItems: "center"}}>
+            <div style={{ minHeight: "calc(100% - 100px)",display: "flex",alignItems: "center"}}>
                 <div class="container">
                     <div class="row " style={{width:"100%"}}>
                         <div class="col-sm-6">

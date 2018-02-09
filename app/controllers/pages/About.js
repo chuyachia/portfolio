@@ -35,7 +35,7 @@ class Home extends React.Component {
             padding:"20px"
         };
         return(
-            <div style={{ minHeight: "calc(100% - 90px)",display: "flex",alignItems: "center",flexWrap: "wrap"}}>
+            <div style={{ minHeight: "calc(100% - 100px)",display: "flex",alignItems: "center",flexWrap: "wrap"}}>
                 <div class="container">
                 <div style={{boxShadow: "10px 10px 5px grey"}} class="jumbotron">
                     <h1 class="display-4">Web development + <br/>Data analysis</h1>

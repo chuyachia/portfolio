@@ -45,7 +45,8 @@ class WorksDisplay extends React.Component {
             borderRadius:"50%",
             cursor: "pointer",
             color:this.props.type=='web'?"#919aa1":"#fff",
-            backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a"
+            backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
+            
         }
         return(
             <div style={{backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff",paddingTop:"15px",minHeight:"calc(100% - 90px)"}}>
