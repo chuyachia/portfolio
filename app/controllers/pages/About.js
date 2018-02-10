@@ -31,11 +31,20 @@ class Home extends React.Component {
       }
     }
     render(){
+        var aboutStyle={
+            minHeight: "100vh",
+            minHeight: "-webkit-calc(100vh- 100px)",
+            minHeight: "-moz-calc(100vh - 100px)",
+            minHeight: "calc(100vh - 100px)",
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap"
+        }
         var cardStyle={
             padding:"20px"
         };
         return(
-            <div style={{ minHeight: "calc(100% - 100px)",display: "flex",alignItems: "center",flexWrap: "wrap"}}>
+            <div style={aboutStyle}>
                 <div class="container">
                 <div style={{boxShadow: "10px 10px 5px grey"}} class="jumbotron">
                     <h1 class="display-4">Web development + <br/>Data analysis</h1>

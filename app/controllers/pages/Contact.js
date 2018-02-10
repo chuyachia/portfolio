@@ -5,8 +5,16 @@ import Message from './components/Message.js';
 
 class Contact extends React.Component {
     render(){
+        var contactStyle={
+            minHeight: "100vh",
+            minHeight: "-webkit-calc(100vh- 100px)",
+            minHeight: "-moz-calc(100vh - 100px)",
+            minHeight: "calc(100vh - 100px)",
+            display: "flex",
+            alignItems: "center"
+        }
         return(
-            <div style={{ minHeight: "calc(100% - 100px)",display: "flex",alignItems: "center"}}>
+            <div style={contactStyle}>
                 <div class="container">
                     <div class="row " style={{width:"100%"}}>
                         <div class="col-sm-6">

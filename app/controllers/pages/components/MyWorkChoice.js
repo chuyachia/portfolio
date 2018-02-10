@@ -5,12 +5,18 @@ import React from 'react';
 class MyWorkChoice extends React.Component {
     render(){
         const blackStyle = {
-            height: "calc(100% - 100px)",
+            height: "100vh",
+            height: "-webkit-calc(100vh - 100px)",
+            height: "-moz-calc(100vh - 100px)",
+            height: "calc(100vh - 100px)",
             backgroundColor:"#1a1a1a",
             cursor: "pointer"
         }
         const whiteStyle = {
-            height: "calc(100% - 100px)",
+            height: "100vh",
+            height: "-webkit-calc(100vh - 100px)",
+            height: "-moz-calc(100vh - 100px)",
+            height: "calc(100vh - 100px)",
             backgroundColor:"white",
             cursor: "pointer"
         }
