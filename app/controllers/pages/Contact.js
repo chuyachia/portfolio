@@ -12,7 +12,7 @@ class Contact extends React.Component {
             minHeight: "calc(100vh - 100px)",
             display: "flex",
             alignItems: "center"
-        }
+        };
         return(
             <div style={contactStyle}>
                 <div class="container">

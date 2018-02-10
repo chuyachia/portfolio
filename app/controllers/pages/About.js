@@ -39,7 +39,7 @@ class Home extends React.Component {
             display: "flex",
             alignItems: "center",
             flexWrap: "wrap"
-        }
+        };
         var cardStyle={
             padding:"20px"
         };

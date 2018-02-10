@@ -34,6 +34,14 @@ class WorksDisplay extends React.Component {
     }
     
     render(){
+        var displayStyle={
+            minHeight: "100vh",
+            minHeight: "-webkit-calc(100vh- 100px)",
+            minHeight: "-moz-calc(100vh - 100px)",
+            minHeight: "calc(100vh - 100px)",
+            backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff",
+            paddingTop:"15px"
+        };
         var backBtnStyle = {
             top:"15",
             position: "sticky",
@@ -47,9 +55,9 @@ class WorksDisplay extends React.Component {
             color:this.props.type=='web'?"#919aa1":"#fff",
             backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
             
-        }
+        };
         return(
-            <div style={{backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff",paddingTop:"15px",minHeight:"calc(100% - 90px)"}}>
+            <div style={displayStyle}>
                 <div onClick={this.props.back} style={backBtnStyle}>
                     <i class="fas fa-angle-left" style={{margin:"auto",fontSize:"36px"}}></i>
                 </div>
