@@ -12,3 +12,19 @@
     opacity: 1;
     transition: all 0.2s linear 0.4s;
 }
+
+.fa-angle-left{
+  line-height: inherit;
+  font-size:24px;
+}
+
+.circleIcon{
+    width:40px;
+    height:40px;
+    border-radius:100%;
+    line-height:40px;
+    text-align:center;
+    vertical-align:middle;
+    display:inline-block;
+    cursor:pointer;
+}

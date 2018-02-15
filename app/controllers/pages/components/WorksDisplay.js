@@ -42,24 +42,20 @@ class WorksDisplay extends React.Component {
             backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff",
             paddingTop:"15px"
         };
+        
         var backBtnStyle = {
             top:"15",
             position: "sticky",
-            zIndex:"10",
-            height:"40px",
-            width:"40px",
-            textAlign:"center", 
             marginLeft:"15px",
-            borderRadius:"50%",
-            cursor: "pointer",
+            zIndex:"10",
             color:this.props.type=='web'?"#919aa1":"#fff",
             backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
-            
         };
+
         return(
             <div style={displayStyle}>
-                <div onClick={this.props.back} style={backBtnStyle}>
-                    <i class="fas fa-angle-left" style={{margin:"auto",fontSize:"36px"}}></i>
+                <div onClick={this.props.back} class="circleIcon" style={backBtnStyle}>
+                    <i class="fas fa-angle-left"/>
                 </div>
                 <div class="container">
                     <div class="row">

@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { HashRouter as Router, Route, Link, hashHistory} from 'react-router-dom';
+import { HashRouter as Router, Route, hashHistory} from 'react-router-dom';
 import Navbar from './pages/components/Navbar.js';
 import Footer from './pages/components/Footer.js';
 import About from './pages/About.js';
