@@ -32,11 +32,10 @@ class Home extends React.Component {
     }
     render(){
         var aboutStyle={
-            minHeight: "100vh",
-            minHeight: "-webkit-calc(100vh- 100px)",
-            minHeight: "-moz-calc(100vh - 100px)",
-            minHeight: "calc(100vh - 100px)",
+            display: "-ms-flexbox",
+            display: "-webkit-flex",
             display: "flex",
+            height:"calc(100vh - 100px)",
             alignItems: "center",
             flexWrap: "wrap"
         };
@@ -56,15 +55,15 @@ class Home extends React.Component {
                     </p>
                 </div>
                 <div class="row lead">
-                    <div class="col-sm-4" style={cardStyle}>
+                    <div class="col-md-4" style={cardStyle}>
                         I've been learning web programming through <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> program and other online resources
                     </div>
-                    <div class="col-sm-4" style={cardStyle}>
+                    <div class="col-md-4" style={cardStyle}>
                         I have a strong interest in <a href="https://github.com/chuyachia/ml" target="_blank">machine learning</a>,
                         <a href="https://github.com/chuyachia/CS224n" target="_blank"> deep learning</a> and
                         <a href="https://github.com/chuyachia/glm" target="_blank"> statistics</a>
                     </div>
-                    <div class="col-sm-4" style={cardStyle}>
+                    <div class="col-md-4" style={cardStyle}>
                         I am a self-learner and I am always seeking to improve my <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skill</a>
                     </div>
                 </div>

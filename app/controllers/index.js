@@ -33,6 +33,5 @@ ReactDom.render(
       <Route replace path="/contact"  component={Contact}/>
     <Footer/>
     </div>
-  </Router>
-  ,
+  </Router>,
   document.getElementById('app'));

@@ -1,4 +1,5 @@
 'use strict';
+require('es6-promise').polyfill();
 
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
