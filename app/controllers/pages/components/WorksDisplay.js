@@ -4,6 +4,7 @@ require('es6-promise').polyfill();
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Card from './Card.js';
+import orderBy from "lodash.orderby";
 import axios from 'axios';
 
 class WorksDisplay extends React.Component {
@@ -23,7 +24,8 @@ class WorksDisplay extends React.Component {
 
     }
     createCards(){
-        return this.state.data.map(function(d){
+        var projects = orderBy(this.state.data,'order');
+        return projects.map(function(d){
             return <Card url_app= {d.url_app} 
             url_code= {d.url_code} 
             img = {d.url_img} 
