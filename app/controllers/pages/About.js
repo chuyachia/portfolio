@@ -31,21 +31,25 @@ class Home extends React.Component {
       }
     }
     render(){
-        var aboutStyle={
-            display: "-ms-flexbox",
-            display: "-webkit-flex",
+        var wrapper={
             display: "flex",
-            height:"calc(100vh - 100px)",
-            alignItems: "center",
-            flexWrap: "wrap"
+            flexDirection:"row"
         };
+        var inner={
+            minHeight:"calc(100vh - 100px)",
+            alignItems: "center",
+            display:"flex",
+            justifyContent: "center",
+            flexDirection:"column"
+        }
+
         var cardStyle={
             padding:"20px"
         };
         return(
-            <div style={aboutStyle}>
-                <div class="container">
-                <div style={{boxShadow: "10px 10px 5px grey"}} class="jumbotron">
+            <div class="wrapper">
+                <div class="container inner">
+                <div style={{boxShadow: "10px 10px 5px grey",width:"100%"}} class="jumbotron">
                     <h1 class="display-4">Web development + <br/>Data analysis</h1>
                     <p class="lead">{this.state.displaytext}</p>
                     <p class="lead">
@@ -54,7 +58,7 @@ class Home extends React.Component {
                         </Link>
                     </p>
                 </div>
-                <div class="row lead">
+                <div class="row lead" style={{width:"100%"}}>
                     <div class="col-md-4" style={cardStyle}>
                         I've been learning web programming through <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> program and other online resources
                     </div>

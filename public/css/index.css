@@ -28,3 +28,15 @@
     display:inline-block;
     cursor:pointer;
 }
+.wrapper{
+    display:flex;
+    flex-direction:row;
+}
+
+.inner {
+    min-height: calc(100vh - 100px);
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
