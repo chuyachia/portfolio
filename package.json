@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "chuyachia-portfolio",
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
   "author": "",
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack-dev-server",
+    "start-dev": "webpack-dev-server",
     "build": "webpack -p"
   },
   "dependencies": {

@@ -60,7 +60,7 @@ class Home extends React.Component {
                 </div>
                 <div class="row lead" style={{width:"100%"}}>
                     <div class="col-md-4" style={cardStyle}>
-                        I've been learning web programming through <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> program and other online resources
+                        I've been learning web programming with <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> and other online resources
                     </div>
                     <div class="col-md-4" style={cardStyle}>
                         I have a strong interest in <a href="https://github.com/chuyachia/ml" target="_blank">machine learning</a>,
@@ -68,7 +68,7 @@ class Home extends React.Component {
                         <a href="https://github.com/chuyachia/glm" target="_blank"> statistics</a>
                     </div>
                     <div class="col-md-4" style={cardStyle}>
-                        I am a self-learner and I am always seeking to improve my <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skill</a>
+                        I am a quick learner and am always seeking to improve my <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skills</a>
                     </div>
                 </div>
                 </div>
