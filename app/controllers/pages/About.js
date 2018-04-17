@@ -7,7 +7,7 @@ class Home extends React.Component {
     constructor(){
         super();
         this.state = {
-            fulltext:"Hi, there! My name is Chu-Ya. I'm a self-taught web developer with a love for data analysis",
+            fulltext:"Hi, there! My name is Chu-Ya. I'm a self-taught web developer with a love for data analysis.",
             displaytext:"",
             i :0
         };
@@ -44,7 +44,9 @@ class Home extends React.Component {
         }
 
         var cardStyle={
-            padding:"20px"
+            padding:"10px 20px 10px 20px",
+            borderLeft: "1px dashed",
+            borderRight: "1px dashed"
         };
         return(
             <div class="wrapper">
@@ -53,21 +55,21 @@ class Home extends React.Component {
                     <h1 class="display-4">Web development + <br/>Data analysis</h1>
                     <p class="lead">{this.state.displaytext}</p>
                     <p class="lead">
-                         <Link class="btn btn-primary btn-lg" to="/myworks" style={{fontSize:"16px"}}>
+                         <Link class="btn btn-lg btn-danger" to="/myworks" style={{fontSize:"16px"}}>
                             See my works <i class="fas fa-long-arrow-alt-right fa-align-center fa-lg"></i>
                         </Link>
                     </p>
                 </div>
                 <div class="row lead" style={{width:"100%"}}>
-                    <div class="col-md-4" style={cardStyle}>
+                    <div class="col-md-4" style={{padding:"10px 20px 10px 20px", borderLeft: "1px dashed",borderRight: "1px dashed"}}>
                         I've been learning web programming with <a href="https://www.freecodecamp.org/chuyachia" target="_blank">freeCodeCamp</a> and other online resources
                     </div>
-                    <div class="col-md-4" style={cardStyle}>
+                    <div class="col-md-4" style={{padding:"10px 20px 10px 20px"}}>
                         I have a strong interest in <a href="https://github.com/chuyachia/ml" target="_blank">machine learning</a>,
                         <a href="https://github.com/chuyachia/CS224n" target="_blank"> deep learning</a> and
                         <a href="https://github.com/chuyachia/glm" target="_blank"> statistics</a>
                     </div>
-                    <div class="col-md-4" style={cardStyle}>
+                    <div class="col-md-4" style={{padding:"10px 20px 10px 20px", borderLeft: "1px dashed",borderRight: "1px dashed"}}>
                         I am a quick learner and am always seeking to improve my <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skills</a>
                     </div>
                 </div>
