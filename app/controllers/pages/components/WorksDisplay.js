@@ -61,7 +61,7 @@ class WorksDisplay extends React.Component {
                     <i class="fas fa-angle-left"/>
                 </div>
                 <div class="container">
-                    <div class="row">
+                    <div class="row" style={{textAlign:"center",display:"inline-block"}}>
                         {this.createCards()}
                     </div>
                 </div>
