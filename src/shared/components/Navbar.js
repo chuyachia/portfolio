@@ -4,22 +4,24 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
-    constructor(){
-      super();
+    constructor(props){
+      super(props);
       this.state = {
         collapsed:true,
+        navon:''
       }
     }
     toggleCollapse(){
         var collapsed = !this.state.collapsed;
         this.setState({collapsed});
     }
-    collapse(){
-        if (!this.state.collapsed)
-          this.setState({collapsed:true});
+    navto(nav){
+        this.setState({
+          collapsed:!this.state.collapsed?true:false,
+          navon:nav
+        });
     }
      render(){
-
        const navClass = this.state.collapsed ? "collapse" : "";
          return(
            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -30,17 +32,17 @@ class Navbar extends React.Component {
             
               <div class={"navbar-collapse "+navClass}  id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
+                  <li class={this.state.navon=="about"?"nav-item active":"nav-item"}>
                     <Link class="nav-link" to={{pathname:"/",state:{referrer:"menu"}}} 
-                    onClick={this.collapse.bind(this)}>About</Link >
+                    onClick={()=>this.navto('about')}>About</Link >
                   </li>
-                  <li class="nav-item">
+                  <li class={this.state.navon=="myworks"?"nav-item active":"nav-item"}>
                     <Link  class="nav-link" to={{pathname:"/myworks",state:{referrer:"menu"}}} 
-                    onClick={this.collapse.bind(this)}>My Works</Link >
+                    onClick={()=>this.navto('myworks')}>My Works</Link >
                   </li>
-                  <li class="nav-item">
+                  <li class={this.state.navon=="contact"?"nav-item active":"nav-item"}>
                     <Link class="nav-link" to={{pathname:"/contact",state:{referrer:"menu"}}}
-                    onClick={this.collapse.bind(this)}>Contact</Link >
+                    onClick={()=>this.navto('contact')}>Contact</Link >
                   </li>
                 </ul>
                   <a href="https://github.com/chuyachia/portfolio" target="_blank"><i class="fas fa-code fa-lg" style={{color:"#919aa1"}}></i></a>
