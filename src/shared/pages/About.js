@@ -62,18 +62,19 @@ class Home extends React.Component {
                 </div>
                 <div class="row lead" style={{width:"100%"}}>
                     <div class="col-md-4" style={{padding:"10px 20px 10px 20px", borderLeft: "1px dashed",borderRight: "1px dashed"}}>
-                        I've been learning web programming with 
+                        I've been learning web programming with&nbsp; 
                         <a href="https://www.freecodecamp.org/chuyachia" target="_blank" 
-                        onClick={()=> this.viewLink('fcc')}>freeCodeCamp</a> and other online resources
+                        onClick={()=> this.viewLink('fcc')}>freeCodeCamp</a>
+                        &nbsp;and other online resources
                     </div>
                     <div class="col-md-4" style={{padding:"10px 20px 10px 20px"}}>
-                        I have a strong interest in 
-                        <a href="https://github.com/chuyachia/ml" target="_blank" onClick={()=> this.viewLink('ml')}>machine learning</a>,
-                        <a href="https://github.com/chuyachia/CS224n" target="_blank" onClick={()=> this.viewLink('dl')}> deep learning</a> and
-                        <a href="https://github.com/chuyachia/glm" target="_blank" onClick={()=> this.viewLink('stat')}> statistics</a>
+                        I have a strong interest in&nbsp;
+                        <a href="https://github.com/chuyachia/ml" target="_blank" onClick={()=> this.viewLink('ml')}>machine learning</a>,&nbsp;
+                        <a href="https://github.com/chuyachia/CS224n" target="_blank" onClick={()=> this.viewLink('dl')}>deep learning</a> and&nbsp;
+                        <a href="https://github.com/chuyachia/glm" target="_blank" onClick={()=> this.viewLink('stat')}>statistics</a>
                     </div>
                     <div class="col-md-4" style={{padding:"10px 20px 10px 20px", borderLeft: "1px dashed",borderRight: "1px dashed"}}>
-                        I am a quick learner and am always seeking to improve my 
+                        I am a quick learner and am always seeking to improve my&nbsp;
                         <a href="https://www.hackerrank.com/chuyachia" target="_blank" onClick={()=> this.viewLink('hr')}>programming skills</a>
                     </div>
                 </div>
