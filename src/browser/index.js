@@ -1,7 +1,6 @@
 import App from "../shared/App";
 import {BrowserRouter} from "react-router-dom";
 import Footer from "../shared/components/Footer";
-import Navbar from "../shared/components/Navbar"
 import configureStore from "../shared/configureStore";
 import { Provider } from "react-redux";
 import React from "react";
@@ -13,7 +12,6 @@ delete window.__initialData__;
 render(<Provider store={store}>
         <BrowserRouter>
             <div>
-            <Navbar/>
             <App/>
             <Footer/>
             </div>

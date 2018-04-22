@@ -6,7 +6,6 @@ import express from "express";
 import Footer from "../shared/components/Footer";
 import session from "express-session";
 import mongoose from "mongoose";
-import Navbar from "../shared/components/Navbar"
 import nodemailer from "nodemailer";
 import Projects from "./models/projects";
 import {Provider} from "react-redux";
@@ -51,8 +50,12 @@ app.get("/data/:type",function(req,res){
     var query = {type:req.params.type};
     Projects.find(query)
     .exec(function(err,result){
-        if (err) throw err;
-        res.json(result);
+        if (err) {
+            console.log(err);
+            res.json({});
+        } else {
+            res.json(result);
+        }
     })
 })
 
@@ -76,8 +79,12 @@ app.post("/message",function(req,res){
         };
         
         smtpTrans.sendMail(mailOpts, function (err) {
-            if (err) throw new Error('Fail to send message');
-            res.json({state:'sent'});
+            if (err) {
+                console.log(err);
+                res.json({state:'error'});
+            } else {
+                res.json({state:'sent'});
+            }
         });
 })
 
@@ -99,7 +106,6 @@ app.get('*',function(req,res){
         <Provider store={store}>
         <StaticRouter location={req.url} context={{}}>
             <div>
-            <Navbar/>
             <App/>
             <Footer/>
             </div>

@@ -8,17 +8,15 @@ class Navbar extends React.Component {
       super(props);
       this.state = {
         collapsed:true,
-        navon:''
       }
     }
     toggleCollapse(){
         var collapsed = !this.state.collapsed;
         this.setState({collapsed});
     }
-    navto(nav){
+    navto(){
         this.setState({
           collapsed:!this.state.collapsed?true:false,
-          navon:nav
         });
     }
      render(){
@@ -32,17 +30,17 @@ class Navbar extends React.Component {
             
               <div class={"navbar-collapse "+navClass}  id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                  <li class={this.state.navon=="about"?"nav-item active":"nav-item"}>
+                  <li class={this.props.navon=="about"?"nav-item active":"nav-item"}>
                     <Link class="nav-link" to={{pathname:"/",state:{referrer:"menu"}}} 
-                    onClick={()=>this.navto('about')}>About</Link >
+                    onClick={()=>this.navto()}>About</Link >
                   </li>
-                  <li class={this.state.navon=="myworks"?"nav-item active":"nav-item"}>
+                  <li class={this.props.navon=="myworks"?"nav-item active":"nav-item"}>
                     <Link  class="nav-link" to={{pathname:"/myworks",state:{referrer:"menu"}}} 
-                    onClick={()=>this.navto('myworks')}>My Works</Link >
+                    onClick={()=>this.navto()}>My Works</Link >
                   </li>
-                  <li class={this.state.navon=="contact"?"nav-item active":"nav-item"}>
+                  <li class={this.props.navon=="contact"?"nav-item active":"nav-item"}>
                     <Link class="nav-link" to={{pathname:"/contact",state:{referrer:"menu"}}}
-                    onClick={()=>this.navto('contact')}>Contact</Link >
+                    onClick={()=>this.navto()}>Contact</Link >
                   </li>
                 </ul>
                   <a href="https://github.com/chuyachia/portfolio" target="_blank"><i class="fas fa-code fa-lg" style={{color:"#919aa1"}}></i></a>

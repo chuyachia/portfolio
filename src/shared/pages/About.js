@@ -2,6 +2,7 @@
 
 import { connect } from "react-redux";
 import { Link  } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import React from 'react';
 import {visitPage,viewLink,sendData} from "../actions";
 
@@ -47,6 +48,8 @@ class Home extends React.Component {
     }
     render(){
         return(
+            <div>
+            <Navbar navon="about"/>
             <div class="wrapper">
                 <div class="container inner">
                 <div style={{boxShadow: "10px 10px 5px grey",width:"100%"}} class="jumbotron">
@@ -79,6 +82,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 </div>
+            </div>
             </div>
         )
     }

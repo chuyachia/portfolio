@@ -3,6 +3,7 @@
 import { connect } from "react-redux";
 import React from 'react';
 import Message from '../components/Message.js';
+import Navbar from "../components/Navbar";
 import {visitPage,sendData} from "../actions";
 
 class Contact extends React.Component {
@@ -24,6 +25,8 @@ class Contact extends React.Component {
     }
     render(){
         return(
+            <div>
+            <Navbar navon="contact"/>
             <div class="wrapper">
                 <div class="container inner">
                     <div class="row" style={{width:"100%"}}>
@@ -37,6 +40,7 @@ class Contact extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
