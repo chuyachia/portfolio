@@ -1,42 +1,78 @@
-const webpack = require('webpack'),
-  path = require('path'),
-  bodyParser = require('body-parser'),
-  connectDB = require('./app/config/connectDB.js'),
-  sendMail = require('./app/config/sendMail.js'),
-  BUILD_DIR = path.resolve(__dirname, 'public/js'),
-  APP_DIR = path.resolve(__dirname, 'app/controllers');
+const webpack = require("webpack");
+const debug = process.env.NODE_ENV!=="production"
 
-function serverSetUp(app){
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true })); 
-  connectDB(app);
-  sendMail(app);
-}
-
-var config = {
-  entry: APP_DIR + '/index.js',
+const browserConfig = {
+  entry: "./src/browser/index.js",
   output: {
-    path: BUILD_DIR,
-    filename: 'bundle.js'
+    path: __dirname,
+    filename: "./public/bundle.js"
   },
-  module:{
-    loaders:[
+  devtool: debug?"cheap-module-source-map":false,
+  module: {
+    rules: [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        exclude: /node_modules/,
-        loader : 'babel-loader'
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
       }
     ]
   },
-   devServer:{
-    publicPath: "/js/",
-    contentBase:"public",
-    host: process.env.IP,
-    port: process.env.PORT,
-    "public":"practice-space-ccyqc.c9users.io",
-    before: serverSetUp
-  } 
+  plugins:debug?[
+
+    new webpack.BannerPlugin({
+      banner: "__isBrowser__ = true;",
+      raw: true,
+      include: /\.js$/
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    })
+    ]:[
+    new webpack.BannerPlugin({
+      banner: "__isBrowser__ = true;",
+      raw: true,
+      include: /\.js$/
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
+     new webpack.optimize.UglifyJsPlugin({
+      minimize: true
+    })
+  ]
 };
 
-module.exports = config;
+const serverConfig = {
+  entry: "./src/server/index.js",
+  target: "node",
+  output: {
+    path: __dirname,
+    filename: "server.js",
+    libraryTarget: "commonjs2"
+  },
+  devtool: debug?"cheap-module-source-map":false,
+  module: {
+    rules: [
+      {
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: "__isBrowser__ = false;",
+      raw: true,
+      include: /\.js$/
+    })
+  ]
+};
+
+module.exports = [browserConfig, serverConfig];

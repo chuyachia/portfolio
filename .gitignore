@@ -1,3 +1,4 @@
 *.log
 .c9
 node_modules
+.env
