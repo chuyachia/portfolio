@@ -3,22 +3,32 @@ require('es6-promise').polyfill();
 
 import axios from 'axios';
 import Card from './Card.js';
+import {DotLoader} from 'react-spinners';
 import orderBy from "lodash.orderby";
 import React from 'react';
 
 class WorksDisplay extends React.Component {
     constructor(){
         super();
-        this.state = {data:[]};
+        this.state = {
+            loading:true,
+            data:[],
+            error:null
+        };
     }
-    componentDidMount(){
-        var compo = this;
+    componentWillMount(){
         axios.get('/data/'+this.props.type)
-          .then(function (response) {
-            compo.setState({data:response.data});
+          .then((response) => {
+              this.setState({
+                  data:response.data.result,
+                  loading:false
+              });
           })
-          .catch(function (error) {
-            console.log(error);
+          .catch((error) =>{
+            this.setState({
+                error:"Oups! Something went wrong. I can't get the projects.",
+                loading:false
+            });
         });
 
     }
@@ -53,7 +63,7 @@ class WorksDisplay extends React.Component {
             color:this.props.type=='web'?"#919aa1":"#fff",
             backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
         };
-
+        console.log(this.state.error);
         return(
             <div style={displayStyle}>
                 <div onClick={this.props.back} class="circleIcon" style={backBtnStyle}>
@@ -61,6 +71,14 @@ class WorksDisplay extends React.Component {
                 </div>
                 <div class="container">
                     <div class="row" style={{textAlign:"center",display:"inline-block"}}>
+                              <div className='sweet-loading' 
+                              style={{margin: "0 auto", position:"absolute",top: "50%",left: "50%"}}>
+                                <DotLoader
+                                  color={'#919aa1'} 
+                                  loading={this.state.loading} 
+                                />
+                              </div>
+                        {this.state.error&&<p>{this.state.error}</p>}
                         {this.createCards()}
                     </div>
                 </div>

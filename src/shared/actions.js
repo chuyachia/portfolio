@@ -60,15 +60,7 @@ export function viewLink(name,time){
 }
 
 export function sendData(obj) {
-        //send back data
         obj.endtime = Date.now();
         navigator.sendBeacon("/visit",JSON.stringify(obj))
-        /*obj.endtime = Date.now();
-        axios.post('/visit',obj)
-        .then(function(response){
-            //
-        })
-        .catch(function(error){
-            //
-        })*/
     }
+

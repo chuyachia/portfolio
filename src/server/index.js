@@ -29,17 +29,20 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-mongoose.connect('mongodb://'+process.env.dbusername+':'+process.env.dbpassword+'@'+process.env.dbhost+':'+process.env.dbport+'/'+process.env.db)
-const db = mongoose.connection;
-db.on('error',console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('connected to db');
-});
+mongoose.connect('mongodb://'+process.env.dbusername+':'+process.env.dbpassword+'@'+process.env.dbhost+':'+process.env.dbport+'/'+process.env.db,
+{ keepAlive: 1})
+.then(function(){
+    console.log('Connected to db');
+})
+.catch(function(err){
+    console.log(err)
+})
+
 
 app.post("/visit",function(req,res){
     console.log(req.body)
     var newVisit = new Visits(JSON.parse(req.body));
-    newVisit.save((err,results)=>{
+    newVisit.save((err)=>{
         if (err) throw err;
         res.json({status:'sucess'});
         console.log('New visit saved');
@@ -52,10 +55,10 @@ app.get("/data/:type",function(req,res){
     .exec(function(err,result){
         if (err) {
             console.log(err);
-            res.json({});
-        } else {
-            res.json(result);
+            return res.json({result:{},state:"error"});
         }
+        var rtn = {result:result,state:"success"}
+        return res.json(rtn);
     })
 })
 
@@ -81,10 +84,9 @@ app.post("/message",function(req,res){
         smtpTrans.sendMail(mailOpts, function (err) {
             if (err) {
                 console.log(err);
-                res.json({state:'error'});
-            } else {
-                res.json({state:'sent'});
+                return res.json({state:'error'});
             }
+            return res.json({state:'sent'});
         });
 })
 
