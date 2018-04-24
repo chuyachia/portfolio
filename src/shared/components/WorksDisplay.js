@@ -63,7 +63,6 @@ class WorksDisplay extends React.Component {
             color:this.props.type=='web'?"#919aa1":"#fff",
             backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
         };
-        console.log(this.state.error);
         return(
             <div style={displayStyle}>
                 <div onClick={this.props.back} class="circleIcon" style={backBtnStyle}>
