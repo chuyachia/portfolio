@@ -14,7 +14,7 @@ class Card extends React.Component {
     }
     render(){
         return(
-            <div class="card" style={{height: "550px", width: "350px", display:"inline-block" ,margin:"10px", verticalAlign:"bottom"}}>
+            <div class="card" style={{height: "550px", width: "340px", display:"inline-block" ,margin:"10px", verticalAlign:"bottom"}}>
                 <div style={{height:"50%",width:"100%",overflow:"hidden"}}>
                      <a href={this.props.url_app} target="_blank"
                      onClick={()=>this.viewProject()}

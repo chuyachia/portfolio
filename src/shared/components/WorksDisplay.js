@@ -19,10 +19,17 @@ class WorksDisplay extends React.Component {
     componentWillMount(){
         axios.get('/data/'+this.props.type)
           .then((response) => {
-              this.setState({
-                  data:response.data.result,
-                  loading:false
-              });
+              if (response.data.success){
+                  this.setState({
+                      data:response.data.result,
+                      loading:false
+                  });
+              } else {
+                this.setState({
+                    error:"Oops! Something went wrong. I can't get the projects.",
+                    loading:false
+                });  
+              }
           })
           .catch((error) =>{
             this.setState({

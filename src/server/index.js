@@ -39,30 +39,27 @@ mongoose.connect('mongodb://'+process.env.dbusername+':'+process.env.dbpassword+
 })
 
 
-app.post("/visit",function(req,res){
+app.post("/visit",function(req,res,next){
     console.log(req.body)
     var newVisit = new Visits(JSON.parse(req.body));
     newVisit.save((err)=>{
-        if (err) throw err;
-        res.json({status:'sucess'});
+        if (err) return next(err);
+        res.json({success:true});
         console.log('New visit saved');
     })
 })
 
-app.get("/data/:type",function(req,res){
+app.get("/data/:type",function(req,res,next){
     var query = {type:req.params.type};
     Projects.find(query)
     .exec(function(err,result){
-        if (err) {
-            console.log(err);
-            return res.json({result:{},state:"error"});
-        }
-        var rtn = {result:result,state:"success"}
+        if (err) return next(err);
+        var rtn = {result:result,success:true}
         return res.json(rtn);
     })
 })
 
-app.post("/message",function(req,res){
+app.post("/message",function(req,res,next){
         var mailOpts, smtpTrans;
         smtpTrans = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -82,11 +79,8 @@ app.post("/message",function(req,res){
         };
         
         smtpTrans.sendMail(mailOpts, function (err) {
-            if (err) {
-                console.log(err);
-                return res.json({state:'error'});
-            }
-            return res.json({state:'sent'});
+            if (err) return next(err);
+            return res.json({success:true});
         });
 })
 
@@ -121,6 +115,7 @@ app.get('*',function(req,res){
     <html>
       <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lux/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
         <link rel="stylesheet" href="/index.css">
@@ -132,6 +127,11 @@ app.get('*',function(req,res){
         <script src="/bundle.js" type="text/javascript"></script>
       </body>
     </html>`)
+})
+
+app.use(function(err,req,res,next){
+    console.error(err.stack);
+    res.status(500).send({success:false,message:'Something went wrong!'});
 })
 
 app.listen(process.env.PORT || 3000,()=>
