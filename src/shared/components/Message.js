@@ -29,9 +29,10 @@ class Message extends React.Component {
             inputText: this.state.text,
           })
           .then(function (response) {
-            compo.setState(response.data);
+            compo.setState({state:'sent'});
           })
           .catch(function (error) {
+               console.log(error)
             compo.setState({state:"error"});
           });
     }
