@@ -66,7 +66,7 @@ class Home extends React.Component {
                 <div class="row lead" style={{width:"100%"}}>
                     <div class="col-md-4" style={{padding:"10px 20px 10px 20px", borderLeft: "1px dashed",borderRight: "1px dashed"}}>
                         I've been learning web programming with&nbsp; 
-                        <a href="https://www.freecodecamp.org/chuyachia" target="_blank" 
+                        <a href="https://www.freecodecamp.org/portfolio/chuyachia" target="_blank" 
                         onClick={()=> this.viewLink('fcc')}>freeCodeCamp</a>
                         &nbsp;and other online resources
                     </div>

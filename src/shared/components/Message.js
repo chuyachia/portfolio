@@ -32,7 +32,6 @@ class Message extends React.Component {
             compo.setState({state:'sent'});
           })
           .catch(function (error) {
-               console.log(error)
             compo.setState({state:"error"});
           });
     }
