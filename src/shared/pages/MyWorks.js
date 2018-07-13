@@ -48,11 +48,11 @@ class Myworks extends React.Component {
     render(){
         switch(this.state.view){
             case 'web':
-                return(<div><Navbar navon="myworks"/><WorksDisplay type="web" back = {this.showIndex.bind(this)}/></div>);
+                return(<div class="wrapper"><Navbar navon="myworks"/><WorksDisplay type="web" back = {this.showIndex.bind(this)}/></div>);
             case 'data':
-                return(<div><Navbar navon="myworks"/><WorksDisplay type="data" back = {this.showIndex.bind(this)}/></div>);
+                return(<div class="wrapper"><Navbar navon="myworks"/><WorksDisplay type="data" back = {this.showIndex.bind(this)}/></div>);
             default:
-                return(<div><Navbar navon="myworks"/><MyWorkChoice showData = {this.showData.bind(this)} showWeb={this.showWeb.bind(this)}/></div>);
+                return(<div class="wrapper"><Navbar navon="myworks"/><MyWorkChoice showData = {this.showData.bind(this)} showWeb={this.showWeb.bind(this)}/></div>);
         }
     }
 }

@@ -53,32 +53,17 @@ class WorksDisplay extends React.Component {
     }
     
     render(){
-        var displayStyle={
-            minHeight: "100vh",
-            minHeight: "-webkit-calc(100vh- 100px)",
-            minHeight: "-moz-calc(100vh - 100px)",
-            minHeight: "calc(100vh - 100px)",
-            backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff",
-            paddingTop:"15px"
-        };
-        
-        var backBtnStyle = {
-            top:"15",
-            position: "sticky",
-            marginLeft:"15px",
-            zIndex:"10",
-            color:this.props.type=='web'?"#919aa1":"#fff",
-            backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
-        };
         return(
-            <div style={displayStyle}>
-                <div onClick={this.props.back} class="circleIcon" style={backBtnStyle}>
+            <div class="inner" style={{backgroundColor:this.props.type=='web'?"#1a1a1a":"#fff"}}>
+                <div onClick={this.props.back} class="circle-icon back" style={{
+                    color:this.props.type=='web'?"#919aa1":"#fff",
+                    backgroundColor:this.props.type=='web'?"#fff":"#1a1a1a",
+                }}>
                     <i class="fas fa-angle-left"/>
                 </div>
                 <div class="container">
-                    <div class="row" style={{textAlign:"center",display:"inline-block"}}>
-                              <div className='sweet-loading' 
-                              style={{margin: "0 auto", position:"absolute",top: "50%",left: "50%"}}>
+                    <div class="work-display">
+                              <div class='loader'>
                                 <DotLoader
                                   color={'#919aa1'} 
                                   loading={this.state.loading} 

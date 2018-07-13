@@ -1,16 +1,93 @@
-.FadeIn-appear {
-  opacity: 0;
+html, body,#app,#app>div {
+  height: 100%;
 }
-.FadeIn-appear.FadeIn-appear-active {
-  opacity: 1;
-  transition: all 0.6s linear;
+
+.wrapper {
+    display:flex;
+    flex-flow: column;
+    min-height:100%;
 }
-.FadeIn-enter {
-    opacity: 0;
+
+.container, .inner{
+    flex:1 1 auto;
 }
-.FadeIn-enter.FadeIn-enter-active {
-    opacity: 1;
-    transition: all 0.2s linear 0.4s;
+
+.jumbotron {
+    box-shadow: 10px 10px 5px #888888;
+    width:100%;
+    margin-top:20px
+}
+
+.btn-lg {
+    font-size:1rem;
+    box-shadow: 1px 1px 4px #888888;
+}
+
+.dot-decorate {
+    padding:10px 20px 10px 20px
+}
+
+@media (min-width: 768px) {
+    .dot-decorate:nth-child(odd){
+        border-left: 1px dashed;
+        border-right: 1px dashed
+    }
+}
+
+.work-choice {
+    display:flex;
+    flex-flow:row;
+    align-items:stretch;
+}
+
+@media (max-width:768px) {
+    .work-choice {
+        flex-flow:wrap;
+    }
+}
+
+.work-choice >div {
+    display:flex;
+    cursor: pointer;
+    flex:1 1 100%;
+    justify-content: center;
+    align-items:center;
+}
+.work-display, .contact  {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+}
+.loader {
+    margin: 0 auto;
+    position:absolute;
+    top: 50%;
+    left:50%
+}
+
+.card {
+     width:300px;
+     padding:10px;
+     margin-top:10px;
+     margin-bottom:10px;
+     display:flex;
+     flex-flow:column;   
+}
+.image {
+    height:50%;
+    width:100%;
+    overflow:hidden;
+    margin-bottom:5px
+}
+.btn-wrap {
+    display:flex;
+    flex-flow:row;
+    margin-top:auto
+}
+.contact>div {
+    flex:1 1 auto;
+    margin-top:20px;
+    padding:10px;
 }
 
 .fa-angle-left{
@@ -18,7 +95,7 @@
   font-size:24px;
 }
 
-.circleIcon{
+.circle-icon{
     width:40px;
     height:40px;
     border-radius:100%;
@@ -26,23 +103,15 @@
     text-align:center;
     vertical-align:middle;
     display:inline-block;
-    cursor:pointer;
-}
-.wrapper{
-    display:flex;
-    flex-direction:row;
+    cursor:pointer
 }
 
-.inner {
-    min-height: calc(100vh - 100px);
-    align-items: center;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
+.back{
+    top:20px;
+    position: sticky;
+    margin-top:20px;
+    margin-left:20px;
+    z-index:10;
+    box-shadow: 1px 1px 4px #888888
 }
 
-@media (max-width: 599px) {
-    .display-4 {
-        font-size: 2.5em;
-    }
-}
