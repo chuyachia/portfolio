@@ -3,7 +3,6 @@
 import { connect } from "react-redux";
 import React from 'react';
 import Message from '../components/Message.js';
-import Navbar from "../components/Navbar";
 import {visitPage,sendData} from "../actions";
 
 class Contact extends React.Component {
@@ -25,17 +24,14 @@ class Contact extends React.Component {
     }
     render(){
         return(
-            <div class="wrapper">
-                <Navbar navon="contact"/>
-                    <div class="container contact">
-                            <div>
-                                <h3>Drop a message</h3>
-                                <Message/>
-                            </div>
-                            <div>
-                                <h3>Or contact me at</h3>
-                                <h5>chuyachia@gmail.com</h5>
-                            </div>
+            <div class="container contact">
+                    <div>
+                        <h3>Drop a message</h3>
+                        <Message/>
+                    </div>
+                    <div>
+                        <h3>Or contact me at</h3>
+                        <h5>chuyachia@gmail.com</h5>
                     </div>
             </div>
         )

@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import configureStore from "../shared/configureStore";
 import dotenv from "dotenv";
 import express from "express";
+import Navbar from "../shared/components/Navbar";
 import Footer from "../shared/components/Footer";
 import session from "express-session";
 import mongoose from "mongoose";
@@ -13,7 +14,7 @@ import React from "react";
 import {renderToString} from "react-dom/server";
 import routes from "../shared/routes";
 import serialize from "serialize-javascript";
-import {StaticRouter, matchPath} from "react-router-dom";
+import {StaticRouter, matchPath, Route} from "react-router-dom";
 import Visits from "./models/visits";
 
 dotenv.config();
@@ -100,12 +101,15 @@ app.get('*',function(req,res){
     
     const markup = renderToString(
         <Provider store={store}>
-        <StaticRouter location={req.url} context={{}}>
-            <div>
-            <App/>
-            <Footer/>
-            </div>
-        </StaticRouter>
+            <StaticRouter location={req.url} context={{}}>
+                <Route render={({ location }) => (
+                    <div class="wrapper">
+                        <Navbar navon= {location.pathname}/>
+                        <App/>
+                        <Footer/>
+                    </div>
+                )}/>
+            </StaticRouter>
         </Provider>)
 
     if (matchPath(req.url,routes).path!=req.url)

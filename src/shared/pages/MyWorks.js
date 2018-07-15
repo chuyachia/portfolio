@@ -2,7 +2,6 @@
 
 import {connect} from "react-redux";
 import MyWorkChoice from '../components/MyWorkChoice.js';
-import Navbar from "../components/Navbar";
 import React from 'react';
 import WorksDisplay from '../components/WorksDisplay.js';
 import {visitPage,sendData} from "../actions";
@@ -48,11 +47,11 @@ class Myworks extends React.Component {
     render(){
         switch(this.state.view){
             case 'web':
-                return(<div class="wrapper"><Navbar navon="myworks"/><WorksDisplay type="web" back = {this.showIndex.bind(this)}/></div>);
+                return(<WorksDisplay type="web" back = {this.showIndex.bind(this)}/>);
             case 'data':
-                return(<div class="wrapper"><Navbar navon="myworks"/><WorksDisplay type="data" back = {this.showIndex.bind(this)}/></div>);
+                return(<WorksDisplay type="data" back = {this.showIndex.bind(this)}/>);
             default:
-                return(<div class="wrapper"><Navbar navon="myworks"/><MyWorkChoice showData = {this.showData.bind(this)} showWeb={this.showWeb.bind(this)}/></div>);
+                return(<MyWorkChoice showData = {this.showData.bind(this)} showWeb={this.showWeb.bind(this)}/>);
         }
     }
 }

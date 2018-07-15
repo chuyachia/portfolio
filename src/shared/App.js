@@ -1,13 +1,20 @@
 import React from "react";
-import {Switch,Route} from "react-router-dom";
+import {Switch,Route,withRouter} from "react-router-dom";
 import routes from "./routes";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const App = ()=>{
+const App = ({location})=>{
     return(
-        <Switch>
-        {routes.map((route,i)=><Route key={i} {...route}/>)}
-        </Switch>
+        <TransitionGroup class="transition-group">
+            <CSSTransition key={location.key} classNames="move" timeout={300}>
+                    <section class="route-section">
+                    <Switch location={location}>
+                    {routes.map((route,i)=><Route key={i} {...route}/>)}
+                    </Switch>
+                    </section>
+            </CSSTransition>
+        </TransitionGroup>
         );
 };
 
-export default App;
+export default withRouter(App);
