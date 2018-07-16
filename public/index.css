@@ -15,7 +15,7 @@ html, body,#app {
 .wrapper {
     display:flex;
     flex-flow: column;
-    min-height: 100%;
+    height: 100%;
 }
 .wrapper>div {
     flex:1;

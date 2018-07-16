@@ -61,14 +61,14 @@ class WorksDisplay extends React.Component {
                 }}>
                     <i class="fas fa-angle-left"/>
                 </div>
+                <div class='loader'>
+                    <DotLoader
+                    color={'#919aa1'} 
+                    loading={this.state.loading} 
+                    />
+                </div>
                 <div class="container">
                     <div class="work-display">
-                              <div class='loader'>
-                                <DotLoader
-                                  color={'#919aa1'} 
-                                  loading={this.state.loading} 
-                                />
-                              </div>
                         {this.state.error&&<p>{this.state.error}</p>}
                         {this.createCards()}
                     </div>
