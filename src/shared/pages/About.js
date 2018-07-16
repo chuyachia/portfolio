@@ -74,6 +74,19 @@ class Home extends React.Component {
                         I am a quick learner and am always seeking to improve my&nbsp;
                         <a href="https://www.hackerrank.com/chuyachia" target="_blank" onClick={()=> this.viewLink('hr')}>programming skills</a>
                     </div>
+                    <div class="col-md-12">
+                        <h5>My main tools</h5>
+                        <div class="package-icons">
+                            <i class="fab fa-js fa-5x"></i>
+                            <i class="fab fa-react fa-5x"></i>
+                            <i class="fab fa-node fa-5x"></i>
+                            <i class="fab fa-html5 fa-5x"></i>
+                            <i class="fab fa-css3-alt fa-5x"></i>
+                            <i class="fab fa-less fa-5x"></i>
+                            <i class="fab fa-r-project fa-5x"></i>
+                            <i class="fab fa-python fa-5x"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

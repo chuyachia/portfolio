@@ -50,6 +50,13 @@ html, body,#app {
 .dot-decorate {
     padding:10px 20px 10px 20px
 }
+.package-icons {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color:#1a1a1a;
+}
+
 @media (min-width: 768px) {
     .dot-decorate:nth-child(odd){
         border-left: 1px dashed;
