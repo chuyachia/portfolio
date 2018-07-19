@@ -1,10 +1,10 @@
-A portfolio page that showcases my works.
+A portfolio page that showcases my work in web development and in data analysis.
 
 Live version [https://portfolio-chuya.glitch.me/](https://portfolio-chuya.glitch.me/)
 
 ## Tech stack
 * Module bundler: Webpack
-* Server: Node, Express, Nodemailer
-* Client-side routing: React-router
+* Back-end: Node, Express, Nodemailer
 * Database: MongoDB
-* Front-end: React, Axios 
+* Front-end: React, Redux 
+* CMS: Prismic
