@@ -35,7 +35,6 @@ class WorksDisplay extends React.Component {
     createCards(){
         return this.state.doc.map(function(d,i){
             const data = d.data;
-            console.log(data);
             return <Card url_app= {data.app_url.url} 
             url_code= {data.code_url.url} 
             img = {data.image.url} 
