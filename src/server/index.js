@@ -8,7 +8,6 @@ import Footer from "../shared/components/Footer";
 import session from "express-session";
 import mongoose from "mongoose";
 import nodemailer from "nodemailer";
-import Projects from "./models/projects";
 import {Provider} from "react-redux";
 import React from "react";
 import {renderToString} from "react-dom/server";
@@ -36,29 +35,19 @@ mongoose.connect('mongodb://'+process.env.dbusername+':'+process.env.dbpassword+
     console.log('Connected to db');
 })
 .catch(function(err){
-    console.log(err)
-})
+    console.log(err);
+});
 
 
 app.post("/visit",function(req,res,next){
-    console.log(req.body)
     var newVisit = new Visits(JSON.parse(req.body));
     newVisit.save((err)=>{
         if (err) return next(err);
         res.json({success:true});
         console.log('New visit saved');
-    })
-})
+    });
+});
 
-app.get("/data/:type",function(req,res,next){
-    var query = {type:req.params.type};
-    Projects.find(query)
-    .exec(function(err,result){
-        if (err) return next(err);
-        var rtn = {result:result,success:true}
-        return res.json(rtn);
-    })
-})
 
 app.post("/message",function(req,res,next){
         var mailOpts, smtpTrans;
@@ -83,7 +72,7 @@ app.post("/message",function(req,res,next){
             if (err) return next(err);
             return res.json({success:true});
         });
-})
+});
 
 app.get('*',function(req,res){
     var userip =  req.headers['x-forwarded-for'];
@@ -96,7 +85,8 @@ app.get('*',function(req,res){
             referrer:req.headers['referer'],
             time:Date.now()
         }
-    })
+    });
+    
     const initialData = store.getState();
     
     const markup = renderToString(
@@ -110,10 +100,11 @@ app.get('*',function(req,res){
                     </div>
                 )}/>
             </StaticRouter>
-        </Provider>)
+        </Provider>);
 
     if (matchPath(req.url,routes).path!=req.url)
-      res.status(404)
+      res.status(404);
+      
     res.send(`
     <!DOCTYPE html>
     <html>
@@ -130,14 +121,14 @@ app.get('*',function(req,res){
         <script>window.__initialData__ = ${serialize(initialData)}</script>
         <script src="/bundle.js" type="text/javascript"></script>
       </body>
-    </html>`)
-})
+    </html>`);
+});
 
 app.use(function(err,req,res,next){
     console.error(err.stack);
     res.status(500).send({success:false,message:'Something went wrong!'});
-})
+});
 
 app.listen(process.env.PORT || 3000,()=>
-console.log("Server is listening")
-)
+    console.log("Server is listening")
+);
