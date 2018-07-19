@@ -84,6 +84,9 @@ html, body,#app {
     align-items:center;
     transition: all 0.5s ease;
 }
+.work-display-wrap{
+    min-height:100%;
+}
 .work-display, .contact  {
     display:flex;
     flex-flow:row wrap;

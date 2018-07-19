@@ -22,7 +22,7 @@ class Card extends React.Component {
                 </div>
                 <h5 class="card-title">{this.props.title}</h5>
                 <p class="card-text" >{this.props.desc}</p>
-                <p class="card-text"> Tech stack: {this.props.techs.map(function(t){return t+" "})}</p>
+                <p class="card-text"> Tech stack: {this.props.techs}</p>
                 <div class="btn-wrap" style={{}}>
                     <a href={this.props.url_app} target="_blank" class="btn btn-primary" 
                         style={{flex:"1 auto"}}
