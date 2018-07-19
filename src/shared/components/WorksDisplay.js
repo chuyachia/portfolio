@@ -24,7 +24,10 @@ class WorksDisplay extends React.Component {
     componentWillMount(){
         const apiEndpoint = 'https://portfolio-chuya.cdn.prismic.io/api/v2';
         Prismic.api(apiEndpoint).then(api => {
-            api.query(Prismic.Predicates.at('my.project.type', this.props.type)).then(response => {
+            api.query(
+                Prismic.Predicates.at('my.project.type', this.props.type),
+                { orderings : '[document.last_publication_date desc]' }
+            ).then(response => {
               if (response) {
                 this.setState({ doc: response.results});
               }
