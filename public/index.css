@@ -47,6 +47,11 @@ html, body,#app {
     box-shadow: 4px 4px 4px #888888;
 }
 
+.dot-decorate >a {
+    text-decoration: underline dashed;
+    text-underline-position: under;
+}
+
 .dot-decorate {
     padding:10px 20px 10px 20px
 }
@@ -110,9 +115,30 @@ html, body,#app {
     height:50%;
     width:100%;
     overflow:hidden;
-    margin-bottom:5px
+    margin-bottom:5px;
+    position:relative;
+}
+.image>a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height:100%;
+  background-color: rgba(255,255,255,0.8);
+	-webkit-transition: none;
+	   -moz-transition: none;
+	        transition: none;
+}
+.image>a:hover:after {
+  width: 120%;
+  background-color: rgba(255,255,255,0);
+	-webkit-transition: all 0.4s ease-in-out;
+	   -moz-transition: all 0.4s ease-in-out;
+	        transition: all 0.4s ease-in-out;
 }
 .btn-wrap {
+    flex:0 0 auto;
     display:flex;
     flex-flow:row;
     margin-top:auto

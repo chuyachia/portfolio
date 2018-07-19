@@ -16,9 +16,10 @@ class Card extends React.Component {
         return(
             <div class="card">
                 <div class="image" >
-                     <a href={this.props.url_app} target="_blank"
-                     onClick={()=>this.viewProject()}
-                     ><img src={this.props.img} style={{backgroundColor:'#888888'}} class="card-img-top"/></a>
+                    <a href={this.props.url_app} target="_blank"
+                    onClick={()=>this.viewProject()}>
+                        <img src={this.props.img} style={{backgroundColor:'#888888'}} class="card-img-top"/>
+                    </a>
                 </div>
                 <h5 class="card-title">{this.props.title}</h5>
                 <p class="card-text" >{this.props.desc}</p>
