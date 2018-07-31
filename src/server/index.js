@@ -110,6 +110,8 @@ app.get('*',function(req,res){
     <html>
       <head>
         <meta charset="utf-8">
+        <meta name="description" content="Portfolio of Chu-Ya Chia, self-taught web developer with experience in data analysis and data visualization.">
+        <meta name="google-site-verification" content="JPOVBB1SpcXLPEgY6OniqvdmHdeW6Hty1Lc9D4xwklg" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lux/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
