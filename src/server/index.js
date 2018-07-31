@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import express from "express";
 import Navbar from "../shared/components/Navbar";
 import Footer from "../shared/components/Footer";
-import session from "express-session";
+//import session from "express-session";
 import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 import {Provider} from "react-redux";
@@ -22,12 +22,12 @@ app.use('/',express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({extended:true}));
-
+/*
 app.use(session({
 	secret: 'profileSecret',
 	resave: false,
 	saveUninitialized: true
-}));
+}));*/
 
 mongoose.connect('mongodb://'+process.env.dbusername+':'+process.env.dbpassword+'@'+process.env.dbhost+':'+process.env.dbport+'/'+process.env.db,
 { keepAlive: 1})
