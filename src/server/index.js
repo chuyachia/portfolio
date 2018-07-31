@@ -102,8 +102,8 @@ app.get('*',function(req,res){
             </StaticRouter>
         </Provider>);
 
-    if (matchPath(req.url,routes).path!=req.url)
-      res.status(404);
+    /*if (matchPath(req.url,routes).path!=req.url)
+      res.status(404);*/
       
     res.send(`
     <!DOCTYPE html>
