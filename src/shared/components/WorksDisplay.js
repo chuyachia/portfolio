@@ -36,14 +36,14 @@ class WorksDisplay extends React.Component {
 
     }
     createCards(){
-        return this.state.doc.map(function(d,i){
+        return this.state.doc.map(function(d){
             const data = d.data;
-            return <Card url_app= {data.app_url.url} 
+            return <Card key = {d.id}
+            url_app= {data.app_url.url} 
             url_code= {data.code_url.url} 
             img = {data.image.url} 
             title={data.title} 
             desc={RichText.asText(data.description)} 
-            key = {i} 
             techs = {data.tech_stack} />;
         });
     }
