@@ -1,5 +1,3 @@
 {
-  "plugins": [
-    "react-html-attrs","transform-object-assign","emotion"
-  ]
+  "presets": ["@babel/env","@babel/preset-react"]
 }

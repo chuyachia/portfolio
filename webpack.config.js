@@ -1,78 +1,43 @@
-const webpack = require("webpack");
-const debug = process.env.NODE_ENV!=="production"
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
-const browserConfig = {
-  entry: "./src/browser/index.js",
+module.exports = {
+  mode: process.env.NODE_ENV,
+  entry: "./src/index.js",
   output: {
-    path: __dirname,
-    filename: "./public/bundle.js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[hash].bundle.js"
   },
-  devtool: debug?"cheap-module-source-map":false,
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
+  devtool: process.env.NODE_ENV!=="production"? 'cheap-source-map' : false,
+  devServer: {
+    port: 8080,
+    contentBase: path.resolve(__dirname, "dist"),
+  },
   module: {
     rules: [
       {
-        test: /js$/,
+        test: /\.js$/,
         exclude: /(node_modules)/,
         loader: "babel-loader",
-        query: { presets: ["react-app"] }
-      }
-    ]
-  },
-  plugins:debug?[
-
-    new webpack.BannerPlugin({
-      banner: "__isBrowser__ = true;",
-      raw: true,
-      include: /\.js$/
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
-    })
-    ]:[
-    new webpack.BannerPlugin({
-      banner: "__isBrowser__ = true;",
-      raw: true,
-      include: /\.js$/
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
-    }),
-     new webpack.optimize.UglifyJsPlugin({
-      minimize: true
-    })
-  ]
-};
-
-const serverConfig = {
-  entry: "./src/server/index.js",
-  target: "node",
-  output: {
-    path: __dirname,
-    filename: "server.js",
-    libraryTarget: "commonjs2"
-  },
-  devtool: debug?"cheap-module-source-map":false,
-  module: {
-    rules: [
+      },
       {
-        test: /js$/,
-        exclude: /(node_modules)/,
-        loader: "babel-loader",
-        query: { presets: ["react-app"] }
+        test: /\.css$/,
+        loader: ["style-loader","css-loader"],
       }
     ]
   },
   plugins: [
-    new webpack.BannerPlugin({
-      banner: "__isBrowser__ = false;",
-      raw: true,
-      include: /\.js$/
-    })
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname,"public","index.html"),
+    }),
+    new Dotenv()
   ]
 };
-
-module.exports = [browserConfig, serverConfig];
