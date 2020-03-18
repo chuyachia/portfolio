@@ -15,9 +15,6 @@ class WorksDisplay extends React.Component {
             error:null
         };
     }
-    linkResolver(doc) {
-      return '/';
-    }
     componentWillMount(){
         const apiEndpoint = process.env.CMS_ENDPOINT;
         Prismic.api(apiEndpoint).then(api => {

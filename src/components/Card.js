@@ -1,12 +1,20 @@
 'use strict';
 
 import React from 'react';
+import ReactGA from 'react-ga';
 
 
 class Card extends React.Component {
     constructor(props){
         super(props);
     }
+
+    sendModuleView(projectTitle) {
+        if (process.env.NODE_ENV === 'production') {
+            ReactGA.modalview(projectTitle);
+        }
+    }
+
     render(){
         return(
             <div className="card">
@@ -20,11 +28,11 @@ class Card extends React.Component {
                 <p className="card-text"> Tech stack: {this.props.techs}</p>
                 <div className="btn-wrap" style={{}}>
                     <a href={this.props.url_app} target="_blank" className="btn btn-primary" 
-                        style={{flex:"1 auto"}} >
+                        style={{flex:"1 auto"}} onClick={()=>this.sendModuleView(this.props.title)}>
                         <i className="fas fa-link"></i>&nbsp;Project
                     </a>
                     <a href={this.props.url_code} target="_blank" className="btn btn-primary"
-                        style={{flex:"1 auto"}}>
+                        style={{flex:"1 auto"}} onClick={()=>this.sendModuleView(this.props.title)}>
                         <i className="fas fa-code"></i>&nbsp;Codes
                     </a>
                 </div>

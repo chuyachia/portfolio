@@ -7,7 +7,7 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            fulltext:"Hi, there! My name is Chu-Ya. I'm a self-taught web developer with a love for data analysis.",
+            fulltext:"Hi, there! My name is Chu-Ya. I'm a web developer with a love for data analysis.",
             displaytext:"",
             i :0
         };
@@ -45,9 +45,8 @@ class Home extends React.Component {
                 </div>
                 <div className="row lead">
                     <div className="col-md-4 dot-decorate">
-                        I've been learning web programming with&nbsp; 
-                        <a href="https://www.freecodecamp.org/portfolio/chuyachia" target="_blank">freeCodeCamp</a>
-                        &nbsp;and other online resources
+                        I am a quick learner and am always seeking to improve my&nbsp;
+                        <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skills</a>
                     </div>
                     <div className="col-md-4 dot-decorate">
                         I have a strong interest in&nbsp;
@@ -56,18 +55,17 @@ class Home extends React.Component {
                         <a href="https://github.com/chuyachia/glm" target="_blank">statistics</a>
                     </div>
                     <div className="col-md-4 dot-decorate">
-                        I am a quick learner and am always seeking to improve my&nbsp;
-                        <a href="https://www.hackerrank.com/chuyachia" target="_blank">programming skills</a>
+                        I believe in honest feeback. Please let me know <Link to={{pathname:"/contact"}}>your comments </Link> on any of my projects  
                     </div>
                     <div className="col-md-12">
                         <h5>My main tools</h5>
                         <div className="package-icons">
                             <i className="fab fa-js fa-5x"></i>
                             <i className="fab fa-react fa-5x"></i>
+                            <i className="fab fa-java fa-5x"></i>
                             <i className="fab fa-node fa-5x"></i>
                             <i className="fab fa-html5 fa-5x"></i>
                             <i className="fab fa-css3-alt fa-5x"></i>
-                            <i className="fab fa-less fa-5x"></i>
                             <i className="fab fa-r-project fa-5x"></i>
                             <i className="fab fa-python fa-5x"></i>
                         </div>
