@@ -1,6 +1,8 @@
-import About from './pages/About';
-import Contact from './pages/Contact';
-import MyWorks from './pages/MyWorks';
+import {lazy} from 'react';
+
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const MyWorks = lazy(()=>import('./pages/MyWorks'));
 
 const routes = [
     {

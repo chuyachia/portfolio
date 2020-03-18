@@ -9,11 +9,13 @@ const App = ({location})=>{
     return(
         <TransitionGroup className="transition-group">
             <CSSTransition key={location.key} classNames="move" timeout={300}>
-                    <section className="route-section">
-                    <Switch location={location}>
-                    {routes.map((route,i)=><Route key={i} {...route}/>)}
-                    </Switch>
-                    </section>
+                <section className="route-section">
+                    <React.Suspense fallback={<i>Loading...</i>}>
+                        <Switch>
+                            {routes.map((route, i) => <Route key={i} {...route} />)}
+                        </Switch>
+                    </React.Suspense>
+                </section>
             </CSSTransition>
         </TransitionGroup>
         );
